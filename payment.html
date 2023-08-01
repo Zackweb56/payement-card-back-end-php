@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payment.css">
+    <title>payment methods</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="txt">information de payment</h1>
+        <form action="">
+            <div class="inpBox">
+                <label for="name">nom et prénom du client</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="inpBox">
+                <label for="adress">Adress</label>
+                <input type="text" name="adress" id="adress">
+            </div>
+            <div class="inpBox">
+                <label for="tele">Telephone(+212)</label>
+                <input type="number" name="tele" id="tele">
+            </div>
+            <div class="radio_info">
+                <div class="paypal">
+                    <input type="radio" name="paypal_bank" id="paypal_check" checked onclick="change_paypal_bank()">&nbsp;&nbsp; <img src="imgs/01.svg" class="paypal_img" alt=""> 
+                </div>
+                <div class="bank">
+                    <input type="radio" name="paypal_bank" id="bank_check" onclick="change_paypal_bank()">&nbsp;&nbsp; <img src="imgs/02.png" alt="">&nbsp; <img src="imgs/03.png" alt=""> 
+                </div>
+            </div>
+            <div class="paypal_inputs" id="paypal_inputs">
+                <div class="inpBox">
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="inpBox">
+                    <label for="pass">password</label>
+                    <input type="password" name="pass" id="pass">
+                </div>
+            </div>
+            <div class="bank_inputs" id="bank_inputs">
+                <div class="inpBox">
+                    <label for="type">type de la carte</label>
+                    <select name="type" id="type">
+                        <option value="VISA">VISA</option>
+                        <option value="MASTER-CARD">MASTERCARD</option>
+                    </select>
+                </div>
+                <div class="inpBox">
+                    <label for="num">Numero de la carte</label>
+                    <input type="number" name="num" id="num">
+                </div>
+                <div class="inpBox">
+                    <label for="date">experation fin</label>
+                    <input type="number" name="month" class="month_year" id="month" placeholder="month">
+                    <input type="number" name="year" class="month_year" id="year" placeholder="year">
+                </div>
+                <div class="inpBox">
+                    <label for="code">code de vérification</label>
+                    <input type="number" name="code" id="code">
+                </div>
+            </div>
+            <input type="button" class="btn btn_v" name="valid" value="validate" id="validate" onclick="verifier()">
+            <input type="reset" class="btn btn_e" name="effacer" value="effacer" id="">
+        </form>
+        <div class="error" id="error"></div>
+    </div>
+    <script src="payment.js"></script>
+    
+</body>
+</html>
